@@ -6,8 +6,7 @@
     name: nodejs
     state: installed
 
-- name: Add roboshop user
-  ansible.builtin.shell: useradd roboshop
+
 
 
 -  name: remove the old App content
