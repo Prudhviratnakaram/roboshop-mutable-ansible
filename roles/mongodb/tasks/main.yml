@@ -2,9 +2,6 @@
   ansible.builtin.copy:
     src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
-  # yum install -y mongodb-org
-  # systemctl enable mongod
-  # systemctl start mongod
 
 - name: install mogodb
   ansible.builtin.yum:
@@ -17,8 +14,4 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0''
 
-- name: restart mongodb
-  ansible.builtin.systemd:
-    name: mongod
-    state: restarted
-    enabled: yes
+
