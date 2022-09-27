@@ -33,3 +33,10 @@
   community.general.npm:
     path: /home/roboshop/catalogue
   become_user: roboshop
+
+- name: Restart catalogue
+  ansible.buitin.systemd:
+    name: catalogue
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
