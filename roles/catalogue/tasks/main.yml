@@ -9,7 +9,7 @@
 - name: Add RoboShop user
   ansible.builtin.user:
     name: roboshop
-    state: RoboShop Application User
+    comment: RoboShop Application User
 
 -  name: remove the old App content
    ansible.builtin.file:
