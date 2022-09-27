@@ -35,7 +35,7 @@
   become_user: roboshop
 
 - name: Restart catalogue
-  ansible.buitin.systemd:
+  ansible.builtin.systemd:
     name: catalogue
     state: restarted
     enabled: yes
