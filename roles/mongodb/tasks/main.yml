@@ -1,0 +1,3 @@
+- name: Import a role
+  ansible.nuiltin.import_role:
+    name:common
