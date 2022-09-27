@@ -6,7 +6,7 @@
     name: nodejs
     state: installed
 
-- name: Add RoboShop user
+- name: Add RoboShop App User
   ansible.builtin.user:
     name: roboshop
     comment: RoboShop Application User
@@ -27,4 +27,3 @@
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue
     remote_src: yes
-    become_user: roboshop
