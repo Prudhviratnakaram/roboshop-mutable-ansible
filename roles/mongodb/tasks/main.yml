@@ -26,6 +26,7 @@
     dest: /tmp
     remote_src: yes
 
+
 - name: Load schema
   community.mongodb.mongodb.shell:
     file: "/tmp/mongodb-main/{{item}}.js"
