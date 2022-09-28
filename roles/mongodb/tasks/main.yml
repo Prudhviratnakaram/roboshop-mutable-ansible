@@ -19,3 +19,17 @@
     name: mongod
     state: restarted
     enabled: yes
+
+- name: Download the Mongodb content and extract it
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
+
+- name: Load schema
+  community.mongodb.mongodb.shell:
+    file: "/tmp/mongodb-main/{{item}}.js"
+    idemponent: yes
+    loop:
+      - catalogue
+      - users
