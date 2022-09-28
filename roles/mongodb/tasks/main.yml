@@ -31,6 +31,6 @@
   community.mongodb.mongodb.shell:
     file: "/tmp/mongodb-main/{{item}}.js"
     idemponent: yes
-    loop:
+  loop:
       - catalogue
       - users
