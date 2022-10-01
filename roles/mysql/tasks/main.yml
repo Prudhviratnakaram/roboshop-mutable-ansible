@@ -22,7 +22,7 @@
   register: mysql_log
 
 - name: Declare facts
-  ansible.builtin_set_fact:
+  ansible.builtin.set_fact:
     Default_pass: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
 
 - name: Get my sql version to get the DB connection
