@@ -10,7 +10,7 @@
 
 - name: install MySQL python  server
   ansible.builtin.yum:
-    name: MySQL-python
+    name: PyMySQL
     state: installed
 
 - name: Start MySql Service
