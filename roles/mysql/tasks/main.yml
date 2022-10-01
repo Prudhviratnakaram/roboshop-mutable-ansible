@@ -19,7 +19,7 @@
     state: restarted
     enabled: yes
 
-- name: handle the error
+- name: check root default password
   block:
     - name: Get my sql version to get the DB connection
       mysql_info:
