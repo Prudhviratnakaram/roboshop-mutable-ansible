@@ -21,4 +21,4 @@
 
 - name: print
   debug:
-    msg: "{{mysql_log}}"
+    msg: "{{mysql_log['content']}}"
