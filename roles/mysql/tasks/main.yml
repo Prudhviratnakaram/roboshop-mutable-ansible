@@ -5,7 +5,9 @@
 
 - name: install MySQL server
   ansible.builtin.yum:
-    name: mysql-community-server
+    name:
+        - mysql-community-server
+        - MySQL-python
     state: installed
 
 - name: Start MySql Service
@@ -19,6 +21,15 @@
     src: /var/log/mysqld.log
   register: mysql_log
 
-- name: print
-  debug:
-    msg: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
+- name: Declare facts
+  ansible.builtin_set_fact:
+    Default_pass: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
+
+- name: Get my sql version to get the DB connection
+  mysql_info:
+    login_user: root
+    login_password: "{{MYSQL_PASSWORD}}"
+    filter: version
+
+
+
