@@ -12,7 +12,7 @@
     tasks_from: app-pre-setup
 
 - name: Install python dependencies
-  ansible.bulitin.pip:
+  ansible.builtin.pip:
     requirements: /home/roboshop/{{COMPONENET}}/requirements.txt
     executable: pip3
 
