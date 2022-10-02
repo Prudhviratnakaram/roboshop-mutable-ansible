@@ -16,7 +16,7 @@
     requirements: /home/roboshop/{{COMPONENET}}/requirements.txt
     executable: pip3
 
-- name: include systemd
+- name: include systemd file
   ansible.builtin.include_role:
     name: common
-    task_from: systemd
+    tasks_from: systemd
