@@ -9,9 +9,9 @@
     tasks_from: app-pre-setup
 
 - name: Install maven dependencies
-  ansible.builtin.shell:  mvn clean package && mv target/{{COMPONENET}}-1.0.jar {{COMPONENT}}.jar
+  ansible.builtin.shell:  mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
   args:
-    chdir: /home/roboshop/{{COMPONENET}}
+    chdir: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
 - name: include systemd file
