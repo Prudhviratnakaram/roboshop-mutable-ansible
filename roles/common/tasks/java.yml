@@ -10,7 +10,8 @@
 
 - name: Install maven dependencies
   ansible.builtin.shell:  mvn clean package && mv target/{{COMPONENET}}-1.0.jar {{COMPONENT}}.jar
-  path : /home/roboshop/{{COMPONENET}}
+  args:
+    chdir: /home/roboshop/{{COMPONENET}}
   become_user: roboshop
 
 - name: include systemd file
