@@ -38,6 +38,23 @@
 
 - name: Change MySQL
   ansible.builtin.shell: echo "Alter USER 'root'@'localhost' IDENTIFIED BY '{{MYSQL_PASSWORD}}';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASS}}"
+  ignore_errors: yes
+
+- name: Download the MYSQL content and extract it
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
+
+
+- name: Load schema
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    target: /tmp/mysql-main/shipping.sql
+    login_user: root
+    login_password: "{{MYSQL_PASSWORD}}"
+
 
 
 
