@@ -8,8 +8,8 @@ catalogue-dev.devopspracticefree.online
 mongodb-dev.devopspracticefree.online
 [MYSQL]
 mysql-dev.devopspracticefree.online
-[PAYEMENT]
-payement-dev.devopspracticefree.online
+[PAYMENT]
+payment-dev.devopspracticefree.online
 [RABBITMQ]
 rabbitmq-dev.devopspracticefree.online
 [REDIS]
