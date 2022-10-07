@@ -5,3 +5,4 @@
 - name: Setup client configuration
   ansible.builtin.import_tasks: client.yml
   when: PROMETHEUS_INSTALL_TYPE== "client"
+
