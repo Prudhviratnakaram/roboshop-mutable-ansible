@@ -25,5 +25,5 @@
         port: 9100
         filters:
           - name: "tag:Monitor"
-            values: "yes"
+            values: ["yes"]
 
