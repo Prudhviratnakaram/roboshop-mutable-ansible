@@ -1,5 +1,4 @@
-- name: Install maven file
-  ansible.builtin.yml:
-    name: maven
-    state: installed
-
+- name: Include Nodejs steps from common role
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: nodejs
